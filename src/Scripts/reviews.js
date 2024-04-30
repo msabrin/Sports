@@ -47,6 +47,6 @@ export const customerReviews = [
     {
       "name": "srytoui",
       "location": "qwertyuiosdfghjk",
-      "message": "wertyuizdfghjklsdewatijuyogkyujrtfgvserrrrteryhtttttilydqecfqw"
+      "message": "hjklsdewatijuyogkyujrtfgvserrrrteryhtttttilydqecfqw"
     }
 ];
