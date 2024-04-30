@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
-    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    background: rgb(250,200,220);
+    background: linear-gradient(90deg, rgba(250,200,220,1) 0%, rgba(255,255,255,1) 100%);
 }
 /* Image */
 .about-image-content {

@@ -10,7 +10,7 @@ import Registation from "./Pages/Registration";
 function App() {
   return (
     <div className="App">
-      <Router basename="/Health-Plus">
+      <Router basename="/Sports-Add">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

@@ -12,7 +12,7 @@ function Home() {
       <Hero />
       <About />
       <Reviews />
-            <Footer />
+      <Footer />
     </div>
   );
 }

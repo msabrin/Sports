@@ -63,22 +63,22 @@ function About() {
 
       <div className="dt-cards-content">
         <DoctorCard
-          img={profile1}
+          // img={profile1}
           name="name of the person"
           title="Podobi"
         />
         <DoctorCard
-          img={profile2}
+          // img={profile2}
           name="name of the person"
           title="Podobi"
         />
         <DoctorCard
-          img={profile3}
+          // img={profile3}
           name="name of the person"
           title="Podobi"
         />
         <DoctorCard
-          img={profile4}
+          // img={profile4}
           name="name of the person"
           title="Podobi"
         />
