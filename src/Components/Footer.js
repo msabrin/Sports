@@ -10,12 +10,13 @@ function Footer() {
         <div className="ft-info">
           <div className="ft-info-p1">
             <p className="ft-title">
-              Health <span className="ft-sign">+</span>
+              Sports <span className="ft-sign">Add</span>
             </p>
             <p className="ft-description">
-              Talk to online  and get medical advice, online
-              prescriptions, refills and medical notes within minutes. On-demand
-              healthcare services at your fingertips.
+              wertyuiopsdfghjklasdfghjkwertyuisdfghjdfghjerghjwerty
+              ujikasdfgjhklrdfghjk
+              asdfghjksdghjkyksdfghjwejhkwert
+              yuiosdfghzxcvbnmxcvbnm,kert
             </p>
           </div>
 
@@ -26,19 +27,19 @@ function Footer() {
           <p className="ft-list-title">Services</p>
           <ul className="ft-list-items">
             <li>
-              <a href="#services">Emergency Care</a>
+              <a href="#services">bjheduiw</a>
             </li>
             <li>
-              <a href="#services">Heart Disease</a>
+              <a href="#services">uhdquiwexcjm</a>
             </li>
             <li>
-              <a href="#services">Dental Care</a>
+              <a href="#services">rwehsjxdws</a>
             </li>
             <li>
-              <a href="#services">Prescription</a>
+              <a href="#services">qfwgsdhiqjxk</a>
             </li>
             <li>
-              <a href="#services">Insights for doctors</a>
+              <a href="#services">rtfxywujxqs</a>
             </li>
           </ul>
         </div>
@@ -47,7 +48,7 @@ function Footer() {
           <p className="ft-list-title">Legal</p>
           <ul className="ft-list-items">
             <li>
-              <Link to={"/legal"}>General Info</Link>
+              <Link to={"/legal"}>how it works</Link>
             </li>
             <li>
               <Link to={"/legal"}>Privacy Policy</Link>
@@ -56,10 +57,10 @@ function Footer() {
               <Link to={"/legal"}>Terms of Services</Link>
             </li>
             <li>
-              <Link to={"/legal"}>Consultations</Link>
+              {/* <Link to={"/legal"}>Consultations</Link> */}
             </li>
             <li>
-              <Link to={"/legal"}>How it Works</Link>
+              {/* <Link to={"/legal"}>How it Works</Link> */}
             </li>
           </ul>
         </div>
@@ -68,36 +69,36 @@ function Footer() {
           <p className="ft-list-title">Talk To Us</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:support@healthplus.com">support@healthplus.com</a>
+              <a content="" href="mailto:ertyud@dffs.com"></a>
             </li>
             <li>
-              <a href="mailto:appointment@healthplus.com">
-                appointment@healthplus.com
+              <a href="mailto:ertyud@dffs.com">
+                
               </a>
             </li>
             <li>
-              <a href="tel:+022 5454 5252">+022 5454 5252</a>
+              <a href="tel:+018234567">+01834567345678</a>
             </li>
             <li>
-              <a href="tel:+022 2326 6232">+022 2326 6232</a>
+              <a href="tel:+0183456789">+018er678546789</a>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="ft-copyright">
-        <p>© 2013-2023 Health+. All rights reserved.</p>
+        <p>© 2024. by Mirza Sabrin.</p>
 
         <ul className="ft-social-links">
           <li>
             <a
-              href="https://linkedin.com/in/Alkaison/"
+              href=""
               title="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns=""
                 height="1em"
                 viewBox="0 0 448 512"
               >
@@ -108,13 +109,13 @@ function Footer() {
 
           <li>
             <a
-              href="https://facebook.com/"
+              href=""
               title="FaceBook"
               target="_blank"
               rel="noopener noreferrer"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns=""
                 height="1em"
                 viewBox="0 0 320 512"
               >
@@ -125,13 +126,13 @@ function Footer() {
 
           <li>
             <a
-              href="https://x.com/Alkaison/"
+              href=""
               title="Twitter"
               target="_blank"
               rel="noopener noreferrer"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns=""
                 height="1em"
                 viewBox="0 0 512 512"
               >

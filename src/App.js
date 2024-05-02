@@ -1,25 +1,40 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Outlet, Route, Router, RouterProvider, } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
 import Legal from "./Pages/Legal";
 import About from "./Components/About";
 import NotFound from "./Pages/NotFound";
 import Registation from "./Pages/Registration";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
-function App() {
+// Declare Root component before using it
+function Root() {
   return (
-    <div className="App">
-      <Router basename="/Health-Plus">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/Registation" element={<Registation />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-    </div>
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
   );
 }
 
-export default App;
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route index element={<Home />} />
+      {/* Define other routes */}
+    </Route>
+  )
+);
+
+export default function App() {
+  return (
+    <RouterProvider router={router}>
+      <div className="App">
+        {/* The rest of your app */}
+      </div>
+    </RouterProvider>
+  );
+}
