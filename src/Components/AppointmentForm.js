@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 function AppointmentForm() {
   useEffect(() => {
@@ -95,12 +95,7 @@ function AppointmentForm() {
   return (
     <div className="page-form">
     <div className="registation-form-section">
-      <h1 className="legal-siteTitle">
-        <Link to="/">
-          Sports <span className="legal-siteSign">Add</span>
-        </Link>
-      </h1>
-
+      <Navbar />
       <div className="form-container">
         <h2 className="form-title">
           <span>Registation Online</span>

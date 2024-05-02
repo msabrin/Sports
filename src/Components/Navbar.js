@@ -34,8 +34,8 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link to="/about" className="navbar-links">
-            shcaduile
+          <Link to={"/Schedule"} className="navbar-links">
+          Schedule
           </Link>
         </li>
         <li>
@@ -44,8 +44,8 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href="#holders" className="navbar-links">
-            About
+          <Link href="#about" className="navbar-links">
+            About Us
           </Link>
         </li>
       </ul>
@@ -63,29 +63,29 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <a onClick={openNav} href="#Registation">
+            <Link onClick={openNav} to="/Registation">
               Registation
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={openNav} href="#about">
-              shcaduile
-            </a>
+            <Link onClick={openNav} to="/Schedule">
+            Schedule
+            </Link>
           </li>
           <li>
-            <a onClick={openNav} href="#reviews">
+            <Link onClick={openNav} href="#reviews">
               Donner
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={openNav} href="#holders">
+            <Link onClick={openNav} href="#about">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a onClick={openNav} href="#contact">
+            <Link onClick={openNav} href="#contact">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

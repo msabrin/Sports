@@ -69,7 +69,7 @@ function Footer() {
           <p className="ft-list-title">Talk To Us</p>
           <ul className="ft-list-items">
             <li>
-              <a content="" href="mailto:ertyud@dffs.com"></a>
+              <a href="mailto:ertyud@dffs.com"></a>
             </li>
             <li>
               <a href="mailto:ertyud@dffs.com">

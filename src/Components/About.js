@@ -1,10 +1,10 @@
 import React from "react";
 import Doctor from "../Assets/doctor-group.png";
 import DoctorCard from "./HolderCard";
-import profile1 from "../Assets/profile-1.png";
-import profile2 from "../Assets/profile-2.png";
-import profile3 from "../Assets/profile-3.png";
-import profile4 from "../Assets/profile-4.png";
+// import profile1 from "../Assets/profile-1.png";
+// import profile2 from "../Assets/profile-2.png";
+// import profile3 from "../Assets/profile-3.png";
+// import profile4 from "../Assets/profile-4.png";
 import "../Styles/Holders.css"
 import SolutionStep from "./SolutionStep";
 import "../Styles/About.css";
