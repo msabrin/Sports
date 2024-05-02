@@ -8,7 +8,8 @@ import Schedule from "./Pages/Schedule"
 import Registation from "./Pages/Registration";
 import Navbar from "./Components/Navbar";
 
-function App() {
+// Declare Root component before using it
+function Root() {
   return (
     <div className="App">
       <Router basename="/">
