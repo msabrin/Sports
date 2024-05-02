@@ -18,6 +18,15 @@ function AppointmentForm() {
   const [Nationality, setNationality] = useState("default");
   const [Event, setEvent] = useState("default");
   const [Institute, setInstitute] = ("default");
+  const [Name, setName] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Gender, setGender] = useState("default");
+  const [Birthdate, setBirthdate] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Religion, setReligion] = useState("default");
+  const [Nationality, setNationality] = useState("default");
+  const [Event, setEvent] = useState("default");
+  const [Institute, setInstitute] = ("default");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
 
@@ -30,8 +39,16 @@ function AppointmentForm() {
       errors.Name = "Name is required";
     } else if (Name.trim().length < 6) {
       errors.Name = "Name must be at least 6 characters";
+    if (!Name.trim()) {
+      errors.Name = "Name is required";
+    } else if (Name.trim().length < 6) {
+      errors.Name = "Name must be at least 6 characters";
     }
 
+    if (!Number.trim()) {
+      errors.Number = "phone number is required";
+    } else if (Number.trim().length !== 10) {
+      errors.Number = "phone number must be of 10 digits";
     if (!Number.trim()) {
       errors.Number = "phone number is required";
     } else if (Number.trim().length !== 10) {
@@ -40,10 +57,15 @@ function AppointmentForm() {
 
     if (Gender === "default") {
       errors.Gender = "Please select gender";
+    if (Gender === "default") {
+      errors.Gender = "Please select gender";
     }
     if (!Birthdate) {
       errors.Birthdate = "Birthdate is required";
+    if (!Birthdate) {
+      errors.Birthdate = "Birthdate is required";
     } else {
+      const selectedTime = new Date(Birthdate).getTime();
       const selectedTime = new Date(Birthdate).getTime();
       const currentTime = new Date().getTime();
       if (selectedTime <= currentTime) {
@@ -54,7 +76,25 @@ function AppointmentForm() {
       errors.Address = "Address is required";
     } else if (Address.trim().length < 10) {
       errors.Address = "Address must be at least 10 characters";
+        errors.Birthdate = "Please select your birthdate";
+      }
     }
+    if (!Address.trim()) {
+      errors.Address = "Address is required";
+    } else if (Address.trim().length < 10) {
+      errors.Address = "Address must be at least 10 characters";
+    }
+    if (Religion === "default") {
+      errors.Religion = "Please select your religion";
+    }
+    if (Nationality === "default") {
+      errors.Nationality = "Please select your nationality";
+    }
+    if (Event === "default") {
+      errors.Event = "Please select your event";
+    }
+    if (Institute === "default") {
+      errors.Institute = "Please select your event";
     if (Religion === "default") {
       errors.Religion = "Please select your religion";
     }
@@ -83,8 +123,18 @@ function AppointmentForm() {
     setNationality("");
     setEvent("");
     setInstitute("");
+    setName("");
+    setNumber("");
+    setGender("default");
+    setBirthdate("");
+    setAddress("");
+    setReligion("");
+    setNationality("");
+    setEvent("");
+    setInstitute("");
     setFormErrors({});
 
+    toast.success("Registation successful !", {
     toast.success("Registation successful !", {
       position: toast.POSITION.TOP_CENTER,
       onOpen: () => setIsSubmitted(true),
@@ -108,8 +158,11 @@ function AppointmentForm() {
               type="text"
               value={Name}
               onChange={(e) => setName(e.target.value)}
+              value={Name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
+            {formErrors.Name && <p className="error-message">{formErrors.Name}</p>}
             {formErrors.Name && <p className="error-message">{formErrors.Name}</p>}
           </label>
 
@@ -120,8 +173,11 @@ function AppointmentForm() {
               type="text"
               value={Number}
               onChange={(e) => setNumber(e.target.value)}
+              value={Number}
+              onChange={(e) => setNumber(e.target.value)}
               required
             />
+            {formErrors.Number && <p className="error-message">{formErrors.Number}</p>}
             {formErrors.Number && <p className="error-message">{formErrors.Number}</p>}
           </label>
 
@@ -131,12 +187,15 @@ function AppointmentForm() {
             <select
               value={Gender}
               onChange={(e) => setGender(e.target.value)}
+              value={Gender}
+              onChange={(e) => setGender(e.target.value)}
               required
             >
               <option value="default">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
+            {formErrors.Gender && <p className="error-message">{formErrors.Gender}</p>}
             {formErrors.Gender && <p className="error-message">{formErrors.Gender}</p>}
           </label>
 
@@ -145,6 +204,20 @@ function AppointmentForm() {
             Birth Date:
             <input
               type="datetime-local"
+              value={Birthdate}
+              onChange={(e) => setBirthdate(e.target.value)}
+              required
+            />
+            {formErrors.Birthdate && <p className="error-message">{formErrors.Birthdate}</p>}
+          </label>
+
+          <br />
+          <label>
+            Adress:
+            <input
+              type="text"
+              value={Address}
+              onChange={(e) => setAddress(e.target.value)}
               value={Birthdate}
               onChange={(e) => setBirthdate(e.target.value)}
               required
@@ -192,6 +265,37 @@ function AppointmentForm() {
               <option value="Nepal">Nepal</option>
             </select>
             {formErrors.Nationality && <p className="error-message">{formErrors.Nationality}</p>}
+            {formErrors.Address && <p className="error-message">{formErrors.Address}</p>}
+          </label>
+
+          <br />
+          <label>
+            Religion:
+            <select
+              value={Religion}
+              onChange={(e) => setReligion(e.target.value)}
+              required
+            >
+              <option value="default">Select</option>
+              <option value="Sprint">Sprint</option>
+              <option value="Merathon">Merathon</option>
+            </select>
+            {formErrors.Religion && <p className="error-message">{formErrors.Religion}</p>}
+          </label>
+
+          <br />
+          <label>
+            Nationality:
+            <select
+              value={Nationality}
+              onChange={(e) => setNationality(e.target.value)}
+              required
+            >
+              <option value="default">Select</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Nepal">Nepal</option>
+            </select>
+            {formErrors.Nationality && <p className="error-message">{formErrors.Nationality}</p>}
           </label>
 
           <br />
@@ -200,12 +304,31 @@ function AppointmentForm() {
             <select
               value={Event}
               onChange={(e) => setEvent(e.target.value)}
+              value={Event}
+              onChange={(e) => setEvent(e.target.value)}
               required
             >
               <option value="default">Select</option>
               <option value="Sprint">Sprint</option>
               <option value="Merathon">Merathon</option>
             </select>
+            {formErrors.Event && <p className="error-message">{formErrors.Event}</p>}
+          </label>
+
+          <br />
+          <label>
+          Institute:
+            <select
+              value={Institute}
+              onChange={(e) => setInstitute(e.target.value)}
+              required
+            >
+              <option value="default">Select</option>
+              <option value="BJMC">BJMC</option>
+              <option value="Custoom">Custoom</option>
+              <option value="Nave">Nave</option>
+            </select>
+            {formErrors.Institute && <p className="error-message">{formErrors.Institute}</p>}
             {formErrors.Event && <p className="error-message">{formErrors.Event}</p>}
           </label>
 
@@ -236,9 +359,13 @@ function AppointmentForm() {
 
       <div className="register-footer">
         <Footer />
+      <div className="register-footer">
+        <Footer />
       </div>
 
       <ToastContainer autoClose={5000} limit={1} closeButton={false} />
+    </div>
+  </div>
     </div>
   </div>
   );
