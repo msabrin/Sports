@@ -2,17 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
+import Footer from "./Footer";
 
 function AppointmentForm() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  const [patientName, setPatientName] = useState("");
-  const [patientNumber, setPatientNumber] = useState("");
-  const [patientGender, setPatientGender] = useState("default");
-  const [appointmentTime, setAppointmentTime] = useState("");
-  const [preferredMode, setPreferredMode] = useState("default");
+  const [Name, setName] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Gender, setGender] = useState("default");
+  const [Birthdate, setBirthdate] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Religion, setReligion] = useState("default");
+  const [Nationality, setNationality] = useState("default");
+  const [Event, setEvent] = useState("default");
+  const [Institute, setInstitute] = ("default");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
 
@@ -21,32 +26,46 @@ function AppointmentForm() {
 
     // Validate form inputs
     const errors = {};
-    if (!patientName.trim()) {
-      errors.patientName = "Patient name is required";
-    } else if (patientName.trim().length < 8) {
-      errors.patientName = "Patient name must be at least 8 characters";
+    if (!Name.trim()) {
+      errors.Name = "Name is required";
+    } else if (Name.trim().length < 6) {
+      errors.Name = "Name must be at least 6 characters";
     }
 
-    if (!patientNumber.trim()) {
-      errors.patientNumber = "Patient phone number is required";
-    } else if (patientNumber.trim().length !== 10) {
-      errors.patientNumber = "Patient phone number must be of 10 digits";
+    if (!Number.trim()) {
+      errors.Number = "phone number is required";
+    } else if (Number.trim().length !== 10) {
+      errors.Number = "phone number must be of 10 digits";
     }
 
-    if (patientGender === "default") {
-      errors.patientGender = "Please select patient gender";
+    if (Gender === "default") {
+      errors.Gender = "Please select gender";
     }
-    if (!appointmentTime) {
-      errors.appointmentTime = "Appointment time is required";
+    if (!Birthdate) {
+      errors.Birthdate = "Birthdate is required";
     } else {
-      const selectedTime = new Date(appointmentTime).getTime();
+      const selectedTime = new Date(Birthdate).getTime();
       const currentTime = new Date().getTime();
       if (selectedTime <= currentTime) {
-        errors.appointmentTime = "Please select a future appointment time";
+        errors.Birthdate = "Please select your birthdate";
       }
     }
-    if (preferredMode === "default") {
-      errors.preferredMode = "Please select preferred mode";
+    if (!Address.trim()) {
+      errors.Address = "Address is required";
+    } else if (Address.trim().length < 10) {
+      errors.Address = "Address must be at least 10 characters";
+    }
+    if (Religion === "default") {
+      errors.Religion = "Please select your religion";
+    }
+    if (Nationality === "default") {
+      errors.Nationality = "Please select your nationality";
+    }
+    if (Event === "default") {
+      errors.Event = "Please select your event";
+    }
+    if (Institute === "default") {
+      errors.Institute = "Please select your event";
     }
 
     if (Object.keys(errors).length > 0) {
@@ -55,14 +74,18 @@ function AppointmentForm() {
     }
 
     // Reset form fields and errors after successful submission
-    setPatientName("");
-    setPatientNumber("");
-    setPatientGender("default");
-    setAppointmentTime("");
-    setPreferredMode("default");
+    setName("");
+    setNumber("");
+    setGender("default");
+    setBirthdate("");
+    setAddress("");
+    setReligion("");
+    setNationality("");
+    setEvent("");
+    setInstitute("");
     setFormErrors({});
 
-    toast.success("Appointment Scheduled !", {
+    toast.success("Registation successful !", {
       position: toast.POSITION.TOP_CENTER,
       onOpen: () => setIsSubmitted(true),
       onClose: () => setIsSubmitted(false),
@@ -70,7 +93,8 @@ function AppointmentForm() {
   };
 
   return (
-    <div className="appointment-form-section">
+    <div className="page-form">
+    <div className="registation-form-section">
       <h1 className="legal-siteTitle">
         <Link to="/">
           Sports <span className="legal-siteSign">Add</span>
@@ -87,11 +111,11 @@ function AppointmentForm() {
             Full Name:
             <input
               type="text"
-              value={patientName}
-              onChange={(e) => setPatientName(e.target.value)}
+              value={Name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
-            {formErrors.patientName && <p className="error-message">{formErrors.patientName}</p>}
+            {formErrors.Name && <p className="error-message">{formErrors.Name}</p>}
           </label>
 
           <br />
@@ -99,26 +123,26 @@ function AppointmentForm() {
             Phone Number:
             <input
               type="text"
-              value={patientNumber}
-              onChange={(e) => setPatientNumber(e.target.value)}
+              value={Number}
+              onChange={(e) => setNumber(e.target.value)}
               required
             />
-            {formErrors.patientNumber && <p className="error-message">{formErrors.patientNumber}</p>}
+            {formErrors.Number && <p className="error-message">{formErrors.Number}</p>}
           </label>
 
           <br />
           <label>
             Gender:
             <select
-              value={patientGender}
-              onChange={(e) => setPatientGender(e.target.value)}
+              value={Gender}
+              onChange={(e) => setGender(e.target.value)}
               required
             >
               <option value="default">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
-            {formErrors.patientGender && <p className="error-message">{formErrors.patientGender}</p>}
+            {formErrors.Gender && <p className="error-message">{formErrors.Gender}</p>}
           </label>
 
           <br />
@@ -126,26 +150,84 @@ function AppointmentForm() {
             Birth Date:
             <input
               type="datetime-local"
-              value={appointmentTime}
-              onChange={(e) => setAppointmentTime(e.target.value)}
+              value={Birthdate}
+              onChange={(e) => setBirthdate(e.target.value)}
               required
             />
-            {formErrors.appointmentTime && <p className="error-message">{formErrors.appointmentTime}</p>}
+            {formErrors.Birthdate && <p className="error-message">{formErrors.Birthdate}</p>}
           </label>
 
           <br />
           <label>
-            Event:
+            Adress:
+            <input
+              type="text"
+              value={Address}
+              onChange={(e) => setAddress(e.target.value)}
+              required
+            />
+            {formErrors.Address && <p className="error-message">{formErrors.Address}</p>}
+          </label>
+
+          <br />
+          <label>
+            Religion:
             <select
-              value={preferredMode}
-              onChange={(e) => setPreferredMode(e.target.value)}
+              value={Religion}
+              onChange={(e) => setReligion(e.target.value)}
               required
             >
               <option value="default">Select</option>
               <option value="Sprint">Sprint</option>
               <option value="Merathon">Merathon</option>
             </select>
-            {formErrors.preferredMode && <p className="error-message">{formErrors.preferredMode}</p>}
+            {formErrors.Religion && <p className="error-message">{formErrors.Religion}</p>}
+          </label>
+
+          <br />
+          <label>
+            Nationality:
+            <select
+              value={Nationality}
+              onChange={(e) => setNationality(e.target.value)}
+              required
+            >
+              <option value="default">Select</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Nepal">Nepal</option>
+            </select>
+            {formErrors.Nationality && <p className="error-message">{formErrors.Nationality}</p>}
+          </label>
+
+          <br />
+          <label>
+            Event:
+            <select
+              value={Event}
+              onChange={(e) => setEvent(e.target.value)}
+              required
+            >
+              <option value="default">Select</option>
+              <option value="Sprint">Sprint</option>
+              <option value="Merathon">Merathon</option>
+            </select>
+            {formErrors.Event && <p className="error-message">{formErrors.Event}</p>}
+          </label>
+
+          <br />
+          <label>
+          Institute:
+            <select
+              value={Institute}
+              onChange={(e) => setInstitute(e.target.value)}
+              required
+            >
+              <option value="default">Select</option>
+              <option value="BJMC">BJMC</option>
+              <option value="Custoom">Custoom</option>
+              <option value="Nave">Nave</option>
+            </select>
+            {formErrors.Institute && <p className="error-message">{formErrors.Institute}</p>}
           </label>
 
           <br />
@@ -157,12 +239,13 @@ function AppointmentForm() {
         </form>
       </div>
 
-      <div className="legal-footer">
-        <p>© 2024 sports. by Mirza Sabrin.</p>
+      <div className="register-footer">
+        <Footer />
       </div>
 
       <ToastContainer autoClose={5000} limit={1} closeButton={false} />
     </div>
+  </div>
   );
 }
 

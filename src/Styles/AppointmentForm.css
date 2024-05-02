@@ -1,10 +1,30 @@
+.page-form{
+    background: rgb(250,200,220);
+    background: linear-gradient(90deg, rgba(250,200,220,1) 0%, rgba(255,255,255,1) 100%);
+}
+
 .form-container {
+    margin-left: 7%;
+    margin-right: 7%;
     padding: 32px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7%;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7%; 
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    gap: 50px;
+    background: #d299da;
 }
+
+.register-footer{
+margin-top: 60px;
+}
+.legal-siteTitle{
+    background: rgb(84,21,6);
+    background: linear-gradient(36deg, rgba(84,21,6,1) 15%, rgba(93,65,4,1) 38%, rgba(103,6,43,1) 76%, rgba(46,2,51,1) 100%);
+}
+
 .form-title {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
@@ -33,7 +53,7 @@
 }
 .form-content label::before {
     content: "*";
-    color: red;
+    color: rgb(83, 14, 110);
     padding: 0 4px 0 0;
 }
 .form-content label :is(input, select) {
